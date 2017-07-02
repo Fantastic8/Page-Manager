@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+ <html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+ <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+ <script type="text/javascript" src="JavaScript/jquery-1.12.3.js"></script>
+ <title>contenteditable</title>
+ <style>
+ *{
+  margin:0;padding:0;
+ }
+ .im-message-area{
+  width:98%;
+  padding:2px;
+  height:75px;
+  border:#000 solid 1px;
+  background:#fff;
+  font:12px/20px arial,"5b8b4f53";
+  word-wrap:break-word;
+  overflow-y:auto;
+  line-height:1;
+ }
+ .ul{display:none;}
+ .ul li{
+  background-color:#CCC;
+  width:50px;
+ }
+ </style>
+ <script language="javascript" type="text/javascript">
+ function inimage(text){
+  var obj= $(".im-message-area")[0];
+  var range, node;
+  if(!obj.hasfocus) {
+   obj.focus();
+  }
+     if (window.getSelection && window.getSelection().getRangeAt) {
+         range = window.getSelection().getRangeAt(0);
+   range.collapse(false);
+         node = range.createContextualFragment(text);
+   var c = node.lastChild;
+         range.insertNode(node);
+   if(c){
+    range.setEndAfter(c);
+    range.setStartAfter(c)
+   }
+   var j = window.getSelection();
+   j.removeAllRanges();
+   j.addRange(range);
+   
+     } else if (document.selection && document.selection.createRange) {
+         document.selection.createRange().pasteHTML(text);
+     }
+ }
+ $(document).ready(function(){
+  $('#button').click(function(){
+   $('.ul').show();
+  })
+  $('.ul li').each(function(){
+   $(this).click(function(){
+    inimage($(this).text());
+   }) 
+  })
+ });
+ </script>
+ </head>
+ <body>
+  <div contenteditable="true" id="im_message_area" class="im-message-area"><br></div>
+  <a href="javascript:void(0)" id="button">按钮</a>
+  <ul class="ul">
+   <li>(笑)</li>
+   <li>(哭)</li>
+   <li>(乐)</li>
+  </ul>
+ </body>
+ </html>

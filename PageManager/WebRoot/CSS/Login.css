@@ -1,0 +1,38 @@
+/*@CHARSET "UTF-8";*/
+
+body{
+	background-image:url('../UI/LoginBG.jpg');
+	background-repeat: no-repeat;
+	background-size:100%;
+}
+
+#divtable{
+	box-shadow: 3px 3px 70px #232222;
+	font-size: 30px;
+	position:absolute;
+	top:50%;left:50%;
+	margin-top:-150px;
+	margin-left:-250px;
+	width:500px;
+	height:300px;
+	display: table;
+}
+
+#divtablecell{
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+	font-family: Microsoft YaHei;
+}
+
+.TextInput{
+	width: 200px;
+	height: 25px;
+	font-size: 20px;
+}
+
+.Button{
+	width: 100px;
+	height: 30px;
+	font-size: 20px;
+}

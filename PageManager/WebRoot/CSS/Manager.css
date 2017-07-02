@@ -1,0 +1,163 @@
+*
+{ 
+	margin:0; 
+	padding:0;
+}
+html
+{ 
+	height:100%; 
+}
+body
+{ 
+	min-height:100%; 
+	font-family:arial; 
+	position:relative;
+}
+.selectable .ui-selected 
+{ 
+	border:2px solid blue;
+}
+
+#sideToggle
+{ 
+	display:none; 
+}
+#sideToggle:checked + aside
+{ 
+	left:0; 
+}
+#sideToggle:checked ~ #wrap
+{ 
+	padding-left:200px; 
+}
+body > aside
+{ 
+	position: fixed; 
+	color:white;
+	top:0; 
+	bottom:0;
+	left:-200px; 
+	width:200px;
+	background:#78786a;
+	text-align: center;
+	transition:0.2s ease-out; 
+	-webkit-transition:0.2s ease-out;
+	z-index:1;
+}
+body > aside > h2
+{ 
+	color:#FFF;
+	text-align:center; 
+	font-weight:normal;
+	padding:10px; 
+}
+#wrap
+{ 
+	margin-left:0px; 
+	padding:0px;
+	transition:0.2s ease-out; 
+	-webkit-transition:0.2s ease-out;
+	z-index:1;
+}
+#wrap > label{ 
+      background:#78786a;
+      color: #FFF;
+      cursor: pointer;
+      display: block;
+      font-family: Courier New;
+      font-size: 20px;
+      font-weight: bold;
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      text-align: center;
+      position: fixed;
+      top:0px;
+    }
+#wrap > label:hover
+{ 
+	background:#000; 
+}
+.Button
+{
+	color:white;
+	border: 2px solid white;
+	padding: 4px;
+}
+.ToolsButton
+{
+	color:white;
+	border: 2px solid white;
+	height: 60px;
+	width:60px;
+	display: table-cell;
+	vertical-align: middle;
+	position: relative;
+	left:60px;
+}
+.Widget
+{
+	font-size:8px;
+	text-align:center;
+	line-height: 10px;
+	opacity:50%;
+	color:white;
+	width: 10px;
+    height: 10px;
+    position:absolute;
+    background-color: rgba(0,0,0,0.3);
+    right:0;
+    top:0;
+}
+.ImageWidget
+{
+	font-size:10px;
+	text-align:center;
+	line-height: 10px;
+	opacity:50%;
+	color:white;
+	width: 10px;
+    height: 10px;
+    position: relative;
+    background-color: rgba(0,0,0,0.3);
+    left: -20px;
+    top:-50px;
+    z-index:1;
+}
+.PageWidget
+{
+	font-size:10px;
+	text-align:center;
+	line-height: 15px;
+	opacity:50%;
+	color:white;
+	width: 15px;
+    height: 15px;
+    position: relative;
+    background-color: rgba(0,0,0,0.3);
+    right:0;
+    bottom:40px;
+    float: right;
+}
+.Dialog tr
+{
+	text-align: center;
+}
+.Dialog td
+{
+	width:250px;
+}
+.Dialog input
+{
+	width:40px;
+	height:20px;
+	vertical-align: middle;
+	font-size:15px;
+	float: right;
+	width:80px;
+}
+.Dialog select
+{
+	text-align:center;
+	float:right;
+}
